@@ -11,10 +11,18 @@
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_nucleo.h"
-			
+#include "LED_driver.h"
 
 int main(void)
 {
+	init_leds();
 
-	for(;;);
+	turn_on_led(1);
+	turn_on_led(8);
+
+	for(int i = 0; i < 8000000; i++);
+
+	turn_off_led(1);
+	turn_off_led(8);
+
 }
