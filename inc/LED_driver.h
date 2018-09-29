@@ -10,6 +10,7 @@
 
 #include "stm32f4xx.h"
 #include "stm32f4xx_nucleo.h"
+#include "stm32f4xx_it.h"
 
 // Initializes the clock and mode for the leds
 extern void init_leds();
