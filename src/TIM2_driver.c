@@ -20,7 +20,7 @@ void init_timer2(double period_ms){
 	TIMER2.Init.CounterMode = TIM_COUNTERMODE_UP;
 	TIMER2.Init.RepetitionCounter = 0; //Not used by tim2 set to 0
 	HAL_TIM_Base_Init(&TIMER2);
-	HAL_TIM_Base_Start_IT(&TIMER2);
+	//HAL_TIM_Base_Start_IT(&TIMER2);
 	HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
 	HAL_NVIC_EnableIRQ(TIM2_IRQn);
 	HAL_NVIC_ClearPendingIRQ(TIM2_IRQn);
@@ -38,7 +38,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	__HAL_TIM_SET_COUNTER(&TIMER2, 0);
 
 	// TODO change 1==1 to check if input is high
-	if(1 == 1){
+	if(HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13)){
 		cState = IDLE;
 		updateState = TRUE;
 	}
