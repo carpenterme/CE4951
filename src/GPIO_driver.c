@@ -14,7 +14,7 @@ void configureGPIO(){
 	GPIO_InitButton.Pin = GPIO_PIN_13;
 	GPIO_InitButton.Mode = GPIO_MODE_IT_RISING_FALLING;
 	GPIO_InitButton.Pull = GPIO_PULLUP;
-	HAL_GPIO_Init(GPIOB, &GPIO_InitButton);
+	HAL_GPIO_Init(GPIOC, &GPIO_InitButton);
 	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 3, 0);
 	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
