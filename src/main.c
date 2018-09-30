@@ -13,11 +13,12 @@
 #include "stm32f4xx_it.h"
 #include "stm32f4xx_nucleo.h"
 #include "LED_driver.h"
+#include "GPIO_driver.h"
 #include "TIM2_driver.h"
 #include "boolean.h"
 #include "states.h"
 
-const double DELAY_TIME = 1.11; // in milliseconds
+const double DELAY_TIME = 2000; // in milliseconds
 
 int main(void)
 {
@@ -29,6 +30,7 @@ int main(void)
 	updateState = TRUE;
 
 	init_leds();
+	configureGPIO();
 	init_timer2(DELAY_TIME);
 
 	while (1){
@@ -54,7 +56,7 @@ int main(void)
 					break;
 			}
 		}
-		//HAL_Delay(10);
+		HAL_Delay(10);
 	}
 
 
