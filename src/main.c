@@ -18,7 +18,7 @@
 #include "boolean.h"
 #include "states.h"
 
-const double DELAY_TIME = 2000; // in milliseconds
+const double DELAY_TIME = 200; // in milliseconds
 
 int main(void)
 {
@@ -56,20 +56,7 @@ int main(void)
 					break;
 			}
 		}
-		HAL_Delay(10);
+		//HAL_Delay(2);
 	}
-
-
-
-
-
-
-//	turn_on_led(1);
-//	turn_on_led(8);
-//
-//	HAL_Delay(2000);
-//
-//	turn_off_led(1);
-//	turn_off_led(8);
 }
 
